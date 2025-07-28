@@ -4,22 +4,22 @@ import { ChevronLeft, ChevronRight, Play, Pause, Volume2, VolumeX } from 'lucide
 const destinations = [
   {
     name: "Talakona Waterfalls",
-    image: "https://images.pexels.com/photos/1271619/pexels-photo-1271619.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    image: "/images/talakona.jpg",
     description: "Andhra's highest waterfall nestled in dense forests"
   },
   {
     name: "Chandragiri Fort",
-    image: "https://images.pexels.com/photos/1583339/pexels-photo-1583339.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    image: "/images/chandragiri_fort.jpg",
     description: "Historic fort with panoramic valley views"
   },
   {
     name: "Srikalahasti Temple",
-    image: "https://images.pexels.com/photos/3356489/pexels-photo-3356489.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    image:  "/images/srikalahasti.jpg",
     description: "Ancient temple known for Vayu Lingam"
   },
   {
     name: "Horsley Hills",
-    image: "https://images.pexels.com/photos/1761279/pexels-photo-1761279.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    image: "/images/horsleyhills.jpg",
     description: "Cool hill station with eucalyptus groves"
   }
 ];
