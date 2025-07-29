@@ -16,13 +16,13 @@ export const placesData = [
     images: [
       "/images/talakona.jpg",
       "/images/talakona.jpg"
-      
     ],
     category: "Waterfalls",
     rating: 4.6,
     highlights: ["Trekking", "Photography", "Nature Walks"],
     bestTime: "Oct-Mar",
-    position: { x: 75, y: 30 }
+    position: { x: 75, y: 30 },
+    description: "Talakona Waterfalls is the highest waterfall in Andhra Pradesh, nestled in the dense forests of Sri Venkateswara National Park. Known for its medicinal properties and serene environment, it's a favorite spot for trekkers, nature lovers, and photographers."
   },
   {
     id: 2,
@@ -46,7 +46,8 @@ export const placesData = [
     rating: 4.4,
     highlights: ["History", "Architecture", "Views"],
     bestTime: "Nov-Feb",
-    position: { x: 45, y: 50 }
+    position: { x: 45, y: 50 },
+    description: "Chandragiri Fort is a historical fort built during the Vijayanagara Empire. With its impressive palace complex and panoramic hilltop views, it's an ideal destination for history buffs and architecture enthusiasts."
   },
   {
     id: 3,
@@ -70,7 +71,8 @@ export const placesData = [
     rating: 4.3,
     highlights: ["Wildlife", "Forest", "Nature"],
     bestTime: "Oct-May",
-    position: { x: 48, y: 35 }
+    position: { x: 48, y: 35 },
+    description: "Sri Venkateswara National Park is a vast biodiversity hotspot home to numerous flora and fauna species. The park is a haven for wildlife lovers, offering safaris, treks, and bird-watching experiences in a serene forest setting."
   },
   {
     id: 4,
@@ -94,7 +96,8 @@ export const placesData = [
     rating: 4.2,
     highlights: ["Spirituality", "Healing", "Nature"],
     bestTime: "Jun-Dec",
-    position: { x: 60, y: 25 }
+    position: { x: 60, y: 25 },
+    description: "Kailasakona Waterfalls is a peaceful natural retreat with year-round flowing water and a nearby temple. It's believed to have healing powers and is ideal for those seeking spiritual solace and scenic beauty."
   },
   {
     id: 5,
@@ -118,7 +121,8 @@ export const placesData = [
     rating: 4.5,
     highlights: ["Unique Formation", "Photography", "Geology"],
     bestTime: "Oct-Mar",
-    position: { x: 55, y: 60 }
+    position: { x: 55, y: 60 },
+    description: "Silathoranam is a rare natural rock formation in Tirumala, believed to have formed millions of years ago. It's a geological wonder and holds spiritual significance, making it a popular spot for pilgrims and geologists alike."
   },
   {
     id: 6,
@@ -135,14 +139,15 @@ export const placesData = [
     },
     nearest: "Chandragiri Fort – 13 km",
     images: [
-     "images/ISKCON.jpg",
+      "images/ISKCON.jpg",
       "images/ISKCON.jpg"
     ],
     category: "Heritage",
     rating: 4.7,
     highlights: ["Spirituality", "Architecture", "Peace"],
     bestTime: "Year-round",
-    position: { x: 40, y: 45 }
+    position: { x: 40, y: 45 },
+    description: "ISKCON Temple Tirupati is a modern spiritual center blending Vedic traditions with peaceful meditation zones. With its vibrant atmosphere and elegant architecture, it's a must-visit for seekers of divine serenity."
   },
   {
     id: 7,
@@ -159,14 +164,15 @@ export const placesData = [
     },
     nearest: "Silathoranam – 2 km",
     images: [
-        "images/Deer_Park.jpg",
+      "images/Deer_Park.jpg",
       "images/Deer_Park.jpg"
     ],
     category: "Wildlife",
     rating: 4.1,
     highlights: ["Wildlife", "Peaceful", "Nature"],
     bestTime: "Oct-Mar",
-    position: { x: 45, y: 40 }
+    position: { x: 45, y: 40 },
+    description: "Deer Park in Tirumala offers a calm natural setting where visitors can view spotted deer in a semi-wild habitat. It's a quiet, scenic place perfect for families, nature photography, and peaceful relaxation."
   },
   {
     id: 8,
@@ -183,14 +189,15 @@ export const placesData = [
     },
     nearest: "SV National Park – 4 km",
     images: [
-         "images/Kapila_Theertham.jpg",
+      "images/Kapila_Theertham.jpg",
       "images/Kapila_Theertham.jpg"
     ],
     category: "Heritage",
     rating: 4.6,
     highlights: ["Spirituality", "Waterfall", "Temple"],
     bestTime: "Year-round",
-    position: { x: 50, y: 55 }
+    position: { x: 50, y: 55 },
+    description: "Kapila Theertham is a sacred temple dedicated to Lord Shiva, located at the base of a natural waterfall. The combination of cascading waters and spiritual ambiance makes it a unique and powerful place for worshippers and visitors alike."
   }
 ];
 

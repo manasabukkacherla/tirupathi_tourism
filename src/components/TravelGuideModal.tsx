@@ -23,7 +23,7 @@ const TravelGuideModal: React.FC<TravelGuideModalProps> = ({ spot, onClose }) =>
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#1F1F1F]/60 backdrop-blur-sm">
       <div className="bg-gradient-to-br from-[#F9F6F1] to-[#245A38]/10 rounded-3xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden border-2 border-[#DAA520]/50 relative flex flex-col">
-        
+
         {/* Decorative Background Circles */}
         <div className="absolute inset-0 opacity-5 pointer-events-none">
           <div className="absolute top-10 left-10 w-32 h-32 border-2 border-[#DAA520] rounded-full"></div>
@@ -71,6 +71,14 @@ const TravelGuideModal: React.FC<TravelGuideModalProps> = ({ spot, onClose }) =>
                 </div>
               </button>
             </div>
+            {/* Description Section */}
+            <div className="mb-8">
+              <h3 className="text-2xl font-bold text-[#1F1F1F] mb-4 font-serif">Overview</h3>
+              <p className="text-[#333] leading-relaxed text-lg">
+                {spot.description}
+              </p>
+            </div>
+
 
             {/* Travel Info Cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">

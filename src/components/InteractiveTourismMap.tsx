@@ -88,7 +88,7 @@ const InteractiveTourismMap: React.FC = () => {
   };
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-[#F9F6F1] via-[#245A38]/5 to-[#DAA520]/10 overflow-hidden">
+    <section id="experiences"  className="relative min-h-screen bg-gradient-to-br from-[#F9F6F1] via-[#245A38]/5 to-[#DAA520]/10 overflow-hidden">
       {/* Header */}
       <div className="relative z-10 pt-20 pb-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
