@@ -1,7 +1,6 @@
-import React from 'react';
-import { X, Bus, Car, Clock, CalendarDays, Lightbulb, MapPin } from 'lucide-react';
+import React, { useEffect } from 'react';
+import { X, Bus, Car, CalendarDays, Lightbulb, MapPin } from 'lucide-react';
 import { PlaceData } from '../data/placesData';
-
 
 interface TravelGuideModalProps {
   spot: PlaceData;
@@ -9,6 +8,13 @@ interface TravelGuideModalProps {
 }
 
 const TravelGuideModal: React.FC<TravelGuideModalProps> = ({ spot, onClose }) => {
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, []);
+
   const openInGoogleMaps = () => {
     const query = encodeURIComponent(`${spot.name}, Tirupati, Andhra Pradesh, India`);
     window.open(`https://www.google.com/maps/search/${query}`, '_blank');
@@ -16,9 +22,10 @@ const TravelGuideModal: React.FC<TravelGuideModalProps> = ({ spot, onClose }) =>
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#1F1F1F]/60 backdrop-blur-sm">
-      <div className="bg-gradient-to-br from-[#F9F6F1] to-[#245A38]/10 rounded-3xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden border-2 border-[#DAA520]/50 relative">
-        {/* Decorative Background Pattern */}
-        <div className="absolute inset-0 opacity-5">
+      <div className="bg-gradient-to-br from-[#F9F6F1] to-[#245A38]/10 rounded-3xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden border-2 border-[#DAA520]/50 relative flex flex-col">
+        
+        {/* Decorative Background Circles */}
+        <div className="absolute inset-0 opacity-5 pointer-events-none">
           <div className="absolute top-10 left-10 w-32 h-32 border-2 border-[#DAA520] rounded-full"></div>
           <div className="absolute bottom-10 right-10 w-24 h-24 border-2 border-[#245A38] rounded-full"></div>
           <div className="absolute top-1/2 left-1/4 w-16 h-16 border border-[#800000] rounded-full"></div>
@@ -32,23 +39,25 @@ const TravelGuideModal: React.FC<TravelGuideModalProps> = ({ spot, onClose }) =>
           <X className="h-6 w-6" />
         </button>
 
+        {/* Scrollable Content */}
         <div className="overflow-y-auto max-h-[90vh]">
-          {/* Header with Image */}
+          {/* Header Image with Text Overlay */}
           <div className="relative h-64 overflow-hidden">
             <img
               src={spot.images[0]}
               alt={spot.name}
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
             <div className="absolute bottom-6 left-6 text-[#F9F6F1]">
               <h2 className="text-4xl font-bold mb-2 font-serif text-[#DAA520]">{spot.name}</h2>
               <p className="text-lg opacity-90">{spot.tagline}</p>
             </div>
           </div>
 
-          {/* Content */}
+          {/* Main Content */}
           <div className="p-8">
+
             {/* Google Maps Button */}
             <div className="mb-8 text-center">
               <button
@@ -63,8 +72,9 @@ const TravelGuideModal: React.FC<TravelGuideModalProps> = ({ spot, onClose }) =>
               </button>
             </div>
 
-            {/* Travel Information Grid */}
+            {/* Travel Info Cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+
               {/* By Car */}
               <div className="bg-gradient-to-br from-[#245A38]/10 to-[#245A38]/20 p-6 rounded-2xl border border-[#245A38]/30">
                 <div className="flex items-center space-x-3 mb-4">
@@ -74,18 +84,9 @@ const TravelGuideModal: React.FC<TravelGuideModalProps> = ({ spot, onClose }) =>
                   <h3 className="text-xl font-bold text-[#245A38] font-serif">By Car</h3>
                 </div>
                 <div className="space-y-2 text-[#1F1F1F]">
-                  <p className="flex items-center space-x-2">
-                    <span className="font-semibold">Distance:</span>
-                    <span>{spot.distanceByCar} from Tirupati</span>
-                  </p>
-                  <p className="flex items-center space-x-2">
-                    <span className="font-semibold">Time:</span>
-                    <span>{spot.carTime}</span>
-                  </p>
-                  <p className="flex items-center space-x-2">
-                    <span className="font-semibold">Fare:</span>
-                    <span>{spot.carFare}</span>
-                  </p>
+                  <p><strong>Distance:</strong> {spot.distanceByCar} from Tirupati</p>
+                  <p><strong>Time:</strong> {spot.carTime}</p>
+                  <p><strong>Fare:</strong> {spot.carFare}</p>
                 </div>
               </div>
 
@@ -98,22 +99,10 @@ const TravelGuideModal: React.FC<TravelGuideModalProps> = ({ spot, onClose }) =>
                   <h3 className="text-xl font-bold text-[#245A38] font-serif">By Bus</h3>
                 </div>
                 <div className="space-y-2 text-[#1F1F1F]">
-                  <p className="flex items-center space-x-2">
-                    <span className="font-semibold">Route:</span>
-                    <span>{spot.bus.route}</span>
-                  </p>
-                  <p className="flex items-center space-x-2">
-                    <span className="font-semibold">Stop:</span>
-                    <span>{spot.bus.stop}</span>
-                  </p>
-                  <p className="flex items-center space-x-2">
-                    <span className="font-semibold">Fare:</span>
-                    <span>{spot.bus.fare}</span>
-                  </p>
-                  <p className="flex items-center space-x-2">
-                    <span className="font-semibold">Time:</span>
-                    <span>{spot.bus.time}</span>
-                  </p>
+                  <p><strong>Route:</strong> {spot.bus.route}</p>
+                  <p><strong>Stop:</strong> {spot.bus.stop}</p>
+                  <p><strong>Fare:</strong> {spot.bus.fare}</p>
+                  <p><strong>Time:</strong> {spot.bus.time}</p>
                 </div>
               </div>
 
@@ -125,12 +114,7 @@ const TravelGuideModal: React.FC<TravelGuideModalProps> = ({ spot, onClose }) =>
                   </div>
                   <h3 className="text-xl font-bold text-[#800000] font-serif">Best Time to Visit</h3>
                 </div>
-                <div className="space-y-2 text-[#1F1F1F]">
-                  <p className="flex items-center space-x-2">
-                    <span className="font-semibold">Season:</span>
-                    <span>{spot.bestTime}</span>
-                  </p>
-                </div>
+                <p><strong>Season:</strong> {spot.bestTime}</p>
               </div>
 
               {/* Travel Tips */}
@@ -141,19 +125,16 @@ const TravelGuideModal: React.FC<TravelGuideModalProps> = ({ spot, onClose }) =>
                   </div>
                   <h3 className="text-xl font-bold text-[#DAA520] font-serif">Travel Tips</h3>
                 </div>
-                <div className="space-y-2 text-[#1F1F1F]">
-                  <p className="flex items-center space-x-2">
-                    <span className="font-semibold">Nearest:</span>
-                    <span>{spot.nearest}</span>
-                  </p>
-                  <p>• Carry water and snacks</p>
-                  <p>• Wear comfortable footwear</p>
-                  <p>• Start early to avoid crowds</p>
-                </div>
+                <p><strong>Nearest:</strong> {spot.nearest}</p>
+                <ul className="list-disc list-inside mt-2 text-[#1F1F1F]">
+                  <li>Carry water and snacks</li>
+                  <li>Wear comfortable footwear</li>
+                  <li>Start early to avoid crowds</li>
+                </ul>
               </div>
             </div>
 
-            {/* Highlights */}
+            {/* Highlights Section */}
             <div className="mb-6">
               <h3 className="text-2xl font-bold text-[#1F1F1F] mb-4 font-serif">What Makes It Special</h3>
               <div className="flex flex-wrap gap-3">
@@ -168,12 +149,13 @@ const TravelGuideModal: React.FC<TravelGuideModalProps> = ({ spot, onClose }) =>
               </div>
             </div>
 
-            {/* Closing Message */}
+            {/* Closing Quote */}
             <div className="text-center p-6 bg-gradient-to-r from-[#DAA520]/10 to-[#245A38]/10 rounded-2xl border border-[#DAA520]/30">
               <p className="text-lg text-[#1F1F1F] font-medium italic">
                 "Every journey begins with a single step. Let {spot.name} be your next adventure."
               </p>
             </div>
+
           </div>
         </div>
       </div>
