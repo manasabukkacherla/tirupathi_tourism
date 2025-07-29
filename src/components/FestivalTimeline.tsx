@@ -32,7 +32,7 @@ const festivalData = [
     location: "Govindaraja Swamy Temple",
     dates: "5 Days in March",
     description: "Float Festival where deity idols float in decorated boats over temple tank",
-    image: "/images/Vaikunta_Ekadasi.jpg",
+    image: "/images/Teppotsavam.jpg",
     color: "#245A38",
     highlight: "Decorated Boat Procession"
   },
@@ -135,7 +135,7 @@ const FestivalTimeline: React.FC = () => {
   };
 
   return (
-    <section className="relative py-20 bg-gradient-to-br from-[#F9F6F1] via-[#8B0000]/5 to-[#DAA520]/10 overflow-hidden">
+    <section id="guide" className="relative py-20 bg-gradient-to-br from-[#F9F6F1] via-[#8B0000]/5 to-[#DAA520]/10 overflow-hidden">
       {/* Decorative Background */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-20 w-32 h-32 border-2 border-[#DAA520] rounded-full animate-pulse"></div>
